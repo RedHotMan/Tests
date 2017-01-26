@@ -8,6 +8,7 @@ $(function(){
 
     var player = $(".player");
 
+    //Zelda bouge selon la position de la souris
    /* $("#map").on('mousemove',function(e){
       var style  = {
         left : e.pageX,
@@ -16,7 +17,9 @@ $(function(){
       $('.player').css(style);
 //      console.log(style);
     });*/
-    
+
+
+   //Ecouteurs sur les evenements - selon les touches haut bas droite gauche
     $('#map').on('keydown keyup', function (e) {
       switch(e.which){
         case 37:
