@@ -1,0 +1,59 @@
+#map
+{
+  width: 100vw;
+  height: 100vh;
+  position:relative;
+    background-image: url(media/grass.png);
+}
+
+.player
+{
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:50px;
+  height:50px;
+  background:url(http://projetpsp.free.fr/anim_playeradvance/zelda.png);
+  position: absolute;
+  transition: .2s ease;
+  animation: moving 0.3s steps(3) infinite;
+}
+
+@keyframes moving 
+{
+  0% {background-position: 0 0;}
+  100% {background-position: -150px 0;}
+}
+
+.goLeft
+{
+  animation: left 0.3s steps(3) infinite;
+}
+
+@keyframes left
+{
+    from {background-position: 0 -50px}
+    to {background-position: -150px -50px;}
+}
+
+.goUp
+{
+  animation: up 0.3s steps(3) infinite;
+}
+
+@keyframes up
+{
+  from {background-position: 0  -100px}
+  to {background-position: -150px -100px}
+}
+
+.goDown
+{
+  animation: down 0.3s steps(3) infinite;
+}
+
+@keyframes down
+{
+  from {background-position:0 -150px}
+  to {background-position: -150px -150px}
+}
