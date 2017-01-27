@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100vh;
   position:relative;
-    background-image: url(media/grass.png);
+  display: inline;
 }
 
 .player
@@ -11,18 +11,20 @@
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  width:50px;
-  height:50px;
-  background:url(http://projetpsp.free.fr/anim_playeradvance/zelda.png);
+  width: 32px;
+  height:32px;
+  /*background:url(http://projetpsp.free.fr/anim_playeradvance/zelda.png);*/
+  background: url("media/link.png");
   position: absolute;
   transition: .2s ease;
   animation: moving 0.3s steps(3) infinite;
+  z-index: 1000;
 }
 
 @keyframes moving 
 {
-  0% {background-position: 0 0;}
-  100% {background-position: -150px 0;}
+  0% {background-position: 0 -96px;}
+  100% {background-position: -192px -96px;}
 }
 
 .goLeft
@@ -32,8 +34,8 @@
 
 @keyframes left
 {
-    from {background-position: 0 -50px}
-    to {background-position: -150px -50px;}
+    from {background-position: 0 -32px}
+    to {background-position: -192px -32px;}
 }
 
 .goUp
@@ -43,8 +45,8 @@
 
 @keyframes up
 {
-  from {background-position: 0  -100px}
-  to {background-position: -150px -100px}
+  from {background-position: 0  0}
+  to {background-position: -192px 0}
 }
 
 .goDown
@@ -54,6 +56,10 @@
 
 @keyframes down
 {
-  from {background-position:0 -150px}
-  to {background-position: -150px -150px}
+  0% {background-position: 0 -64px;}
+  100% {background-position: -192px -64px;}
+}
+div
+{
+  display: inline;
 }

@@ -8,7 +8,8 @@ $(function(){
 
     var player = $(".player");
 
-    //Zelda bouge selon la position de la souris
+
+//Zelda bouge selon la position de la souris
    /* $("#map").on('mousemove',function(e){
       var style  = {
         left : e.pageX,
@@ -50,15 +51,29 @@ $(function(){
     });
     
     monWorker.onmessage = function(event){
-        console.log("Worker left:"+ event.data.left);
-        console.log("Worker top:"+ event.data.top);
-        player.css('transform', 'translate(' + event.data.left*32 + 'px,' + event.data.top*32 + 'px)');
+        console.log("Worker left:"+ event.data.player.left);
+        console.log("Worker top:"+ event.data.player.top);
+        player.css('transform', 'translate(' + event.data.player.left*32 + 'px,' + event.data.player.top*32 + 'px)');
+
+        $("#map").html('');
+        for(var i = 0; i < event.data.maMap.length; i++){
+            for(var j = 0; j < event.data.maMap.length; j++){
+                if(event.data.maMap[i][j] == 1){
+                    $("#map").append("<div><img src='media/grass.png'></div>");
+                }
+                else{
+                    $("#map").append("<div><img src='media/grass2.png'></div>");
+                }
+
+            }
+        }
+
     };
-    
-    /*monWorker.onerror = function(error){
-        console.log("Worker error:"+ errorMessage + "\n");
+
+    monWorker.onerror = function(error){
+        console.log("Worker error:"+ error.message + "\n");
         throw error;
-    }*/
+    }
 
 });
 
