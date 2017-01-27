@@ -1,16 +1,23 @@
-#map
-{
-  width: 100vw;
-  height: 100vh;
-  position:relative;
-  display: inline;
+#viewport {
+  width: 320px;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
 }
 
-.player
+#map
 {
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+  position:relative;
+  left:0;
+  top:0;
+  width: 3200px;
+  height: 3200px;
+  transition: all .2s ease;
+}
+
+.player, .ennemi
+{
+  /*transform:translate(-50%,-50%);*/
   width: 32px;
   height:32px;
   /*background:url(http://projetpsp.free.fr/anim_playeradvance/zelda.png);*/
@@ -59,7 +66,4 @@
   0% {background-position: 0 -64px;}
   100% {background-position: -192px -64px;}
 }
-div
-{
-  display: inline;
-}
+
