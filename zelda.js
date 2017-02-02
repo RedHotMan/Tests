@@ -70,6 +70,12 @@ $(function(){
             }
         }
 
+        for(var b = 0; b < entity.LesObstacles.length; b++){
+            if($("#"+entity.LesObstacles[b].id).length == 0){
+                $("#map").append($('<div id="'+ entity.LesObstacles[b].id +'" class="'+entity.LesObstacles[b].className+'">'));
+            }
+        }
+
 
         $("#"+ entity.player.id).css('transform', 'translate(' + entity.player.x*32 + 'px,' + entity.player.y*32 + 'px)');
 
